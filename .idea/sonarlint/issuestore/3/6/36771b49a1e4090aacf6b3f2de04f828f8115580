@@ -1,0 +1,7 @@
+
+g	java:S112N"FDefine and throw a dedicated exception instead of using a generic one.(‰ªÌ¤þÿÿÿÿ8¯Þ¼¡Â1
+j
+java:S53610"HReplace this call to "replaceAll()" by a call to the "replace()" method.(Èááþÿÿÿÿ8¾Þ¼¡Â1
+`
+java:S1155O">Use isEmpty() to check whether the collection is empty or not.(í §ôûÿÿÿÿ8ÁÞ¼¡Â1
+G	java:S106|"+Replace this use of System.out by a logger.(¬áèª8èµÆ¡Â1
