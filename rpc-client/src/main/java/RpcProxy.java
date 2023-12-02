@@ -54,7 +54,9 @@ public class RpcProxy {
             Bootstrap bootstrap = new Bootstrap();
             bootstrap.group(loopGroup)
                     .channel(NioSocketChannel.class)
-                    // Nagle算法开关
+                    // TCP标准参数，在传输的时候，默认让传输的帧（数据块）尽可能的大，可以提高传输效率，如何做到？
+                    // 默认用一种Nagle算法保证尽可能大的数据块进行传输
+                    // NODELAY默认是false，即延迟，等到数据块足够大才发送，true则不延迟，一有数据马上发
                     .option(ChannelOption.TCP_NODELAY, true)
                     .handler(new ChannelInitializer<SocketChannel>() {
                         @Override

@@ -111,9 +111,12 @@ public class RpcServer {
                         @Override
                         protected void initChannel(SocketChannel ch) throws Exception {
                             ChannelPipeline pipeline = ch.pipeline();
-                            //编码器
+                            // 编码器
                             pipeline.addLast(new ObjectEncoder());
-                            //解码器
+                            // 解码器
+                            // maxObjectSize 需要序列化的对象的最大字节长度
+                            // classResolver 类解析器 作用：将传过来的二进制请求参数数据，转换成对应的类的实例，需要类加载器加载类并实例化
+                            // cacheDisabled参数如果传null，会使用默认的类加载器
                             pipeline.addLast(new ObjectDecoder(Integer.MAX_VALUE,
                                     ClassResolvers.cacheDisabled(null)));
                             pipeline.addLast(new RpcServerHandler(registerMap));
