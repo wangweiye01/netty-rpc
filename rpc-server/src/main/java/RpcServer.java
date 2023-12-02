@@ -19,11 +19,11 @@ import java.util.Map;
  */
 public class RpcServer {
     /**
-     * 注册表
+     * 注册表，存放接口类和实现对象的对应关系 ex: key=cc.wangweiye.SomeService  value=SomeServiceImpl(实例化的对象)
      */
     private Map<String, Object> registerMap = new HashMap<>();
     /**
-     * 用于存放指定包中的业务接口的实现类名
+     * 存放指定包中业务接口实现类的全限定名 ex: cc.wangweiye.service.SomeServiceImpl
      */
     private List<String> classCache = new ArrayList<>();
 
